@@ -7,11 +7,13 @@ def task1_v1(lst1, lst2):
         return lst1
 
     # тут можно было бы lst1.sort(), но обычно это не то что нужно
+    # O(n log n) + O(k log k), где n = len(lst1), k = len(lst2)
     lst1srt = sorted(lst1)
     lst2srt = sorted(lst2)
     rc = []
     p2 = 0  # индекс на втором листе
     x2 = lst2srt[p2]
+    # O(n) + O(k), где n = len(lst1), k = len(lst2)
     for x1 in lst1srt:
         if x1 < x2:
             rc.append(x1)
@@ -26,6 +28,7 @@ def task1_v1(lst1, lst2):
 
 def task1_v2(lst1, lst2):
     ''' в лоб: для теста более хитрого решения '''
+    # O(n * k), где n = len(lst1), k = len(lst2)
     rc = []
     for x1 in lst1:
         if x1 not in lst2:

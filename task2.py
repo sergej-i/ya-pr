@@ -11,6 +11,7 @@ def task2_v1(lst1):
 
     p1 = len(lst1) - 1
 
+    # если считать в лоб и учитывать, что delete - O (n), то O(n^2)
     while p1 >= 0:
         if lst1[p1] == 0:
             del lst1[p1]
